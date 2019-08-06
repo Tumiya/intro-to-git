@@ -137,25 +137,15 @@ _Once that command goes through successfully, do a **```git status -v```** to se
 
 You're probably itching to do some git merges and learn how to deal with those merge conflicts already. Unfortunately we are not there just yet. What if you have made some changes but you're not ready to commit just yet? Well you can stash your changes! It is exactly what it sounds like, you are basically holding on to these changes until you are ready to do something with them. 
 
-1. Make some changes while you are in master.
-2. Do ```git add``` then switch to another branch.
+1. Make some changes while you are in master. Do not use ```git add```.
 
-What happens? 
-
-Doing this will completely discard all the changes you have made without any warning. In other words, **DO NOT USE GIT ADD UNTIL YOU'RE READY TO COMMIT!!**
-
-3. Go back to master and some changes again.
-4. This time do not use git add, just switch branches.
-
-You should get a warning this time telling you to commit your changes or stash it. In this case, lets use stash.
-
-5. Stash your changes
+2. Stash your changes
 ```
 git stash
 ```
 _This command will hold on to the changes you have made to this branch and allow you to use it for later_
 
-6. Let's look at our stash
+3. Let's look at our stash
 ```
 git stash list
 ```
@@ -169,8 +159,8 @@ _This will show the details of your stash. If you do not declare a stash, it wil
 
 So how do we use stash?
 
-7. Create a new branch and switch into it.
-8. Let's apply the stash
+4. Create a new branch and switch into it.
+5. Let's apply the stash
 ```
 git stash apply
 ```
@@ -182,7 +172,7 @@ All stash commands defaults to using stash@{0} (the most recent stash). Just cha
 
 Try creating a few more stashes. Use the previous commands with specific stashes. Once you are done, lets start cleaning up.
 
-9. Let's get rid of a stash
+6. Let's get rid of a stash
 ```
 git stash drop stash{x}
 ```
