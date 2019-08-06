@@ -135,7 +135,67 @@ _Once that command goes through successfully, do a **```git status -v```** to se
 
 ## Activity Four: Stash it 
 
-You're probably itching to do some git merges and learn how to deal with those merge conflicts already. Unfortunately we are not there just yet. What if you have made some changes but you're not ready to commit just yet? Well you can stash your changes! It is exactly what it sounds like, you are basically holding on to these changes until you are ready to do something with them.
+You're probably itching to do some git merges and learn how to deal with those merge conflicts already. Unfortunately we are not there just yet. What if you have made some changes but you're not ready to commit just yet? Well you can stash your changes! It is exactly what it sounds like, you are basically holding on to these changes until you are ready to do something with them. 
+
+1. Make some changes while you are in master.
+2. Do ```git add``` then switch to another branch.
+
+What happens? 
+
+Doing this will completely discard all the changes you have made without any warning. In other words, **DO NOT USE GIT ADD UNTIL YOU'RE READY TO COMMIT!!**
+
+3. Go back to master and some changes again.
+4. This time do not use git add, just switch branches.
+
+You should get a warning this time telling you to commit your changes or stash it. In this case, lets use stash.
+
+5. Stash your changes
+```
+git stash
+```
+_This command will hold on to the changes you have made to this branch and allow you to use it for later_
+
+6. Let's look at our stash
+```
+git stash list
+```
+_This will show us the list of changes we have stashed_
+
+We can get more details about individual stashed changes by using
+```
+git stash show
+```
+_This will show the details of your stash. If you do not declare a stash, it will default to using stash@{0} and if you want even more details try adding the **-v** flag_
+
+So how do we use stash?
+
+7. Create a new branch and switch into it.
+8. Let's apply the stash
+```
+git stash apply
+```
+_This will apply all the changes in stash@{0}_
+
+You can hold on to multiple stashes at the same time. New stashes will always be stored in stash@{0}, and existing stashes will be incremented by 1. 
+
+All stash commands defaults to using stash@{0} (the most recent stash). Just change the value if you want to specify a stash.
+
+Try creating a few more stashes. Use the previous commands with specific stashes. Once you are done, lets start cleaning up.
+
+9. Let's get rid of a stash
+```
+git stash drop stash{x}
+```
+_x being the stash number for the stash you want to get rid of. This will remove a single stash_
+
+If you want to just clear your entire stash list 
+```
+git stash clear
+```
+
+
+
+
 
 
 
