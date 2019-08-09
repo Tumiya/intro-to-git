@@ -166,6 +166,12 @@ git stash apply
 ```
 _This will apply all the changes in stash@{0}_
 
+You could also use 
+```
+git stash pop
+``` 
+_This will do ```git apply``` then drop the stash_
+
 You can hold on to multiple stashes at the same time. New stashes will always be stored in stash@{0}, and existing stashes will be incremented by 1. 
 
 All stash commands defaults to using stash@{0} (the most recent stash). Just change the value if you want to specify a stash.
@@ -182,6 +188,45 @@ If you want to just clear your entire stash list
 ```
 git stash clear
 ```
+
+## Activity Five: Remotes
+
+Before we do some git commands lets set up a remote repo using github.
+
+1. Click on the **+** sign on the top left of your page.
+
+<img src="https://github.com/mobile-release-engineering/intro-to-git/blob/master/screenshots/plus.png" width="154" height="138">
+
+2. Choose a name for your new repo and click create repository
+
+<img src="https://github.com/mobile-release-engineering/intro-to-git/blob/master/screenshots/new_repo.png" width="468" height="447">
+
+Once you have create your repo, lets go back to our terminal.
+
+3. Let's connect our local repo to the online repo. Grab the link for your online repo, use the https url is you have not set up your git to work with ssh.
+```
+git remote add [remote name] [link]
+```
+4. Setup an upstream to your branch
+```
+git push -u [remote name] master
+```
+_once your upstream is set it will create a reference between your local and remote branch, you can just use git push on that branch moving forward._
+
+But what if we need to pull a branch from our remote repo that doesnt exist locally? How would we create a reference?
+
+5. We fetch our branches 
+```
+git fetch
+```
+_This will fetch the default remote you have set (if you have multiple remotes). You can target a specific remote by specifying a name after fetch_
+
+6. Then we ```git checkout``` the branch that we want. To look at our remote branches we have use
+```
+git branch --list -r
+```
+
+By now you should have a good understanding of basic git actions. Time to dig in deeper.
 
 
 
