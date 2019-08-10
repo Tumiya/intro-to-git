@@ -20,11 +20,7 @@ Remember that a commit is basically a snapshot of your repository. A new commit 
 
 1. First lets make a few new files.
 ```
-touch file.txt
-touch file.csv
-touch file.html
-touch different.txt
-touch hello.txt
+touch file.txt anotherFile.txt andAnotherOne.txt hello.txt helloWorld.txt
 ```
 2. Let's add all the files in the staging area.
 ```
