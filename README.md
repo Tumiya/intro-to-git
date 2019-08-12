@@ -224,11 +224,6 @@ git branch --list -r
 
 By now you should have a good understanding of basic git actions. Time to dig in deeper.
 
-## Congratulations!
-
-You made it to the end. Please complete our survey on how we can improve future events.
-[Intro to Git Survey](https://www.surveymonkey.com/r/CRG22G5)
-
 
 
 
